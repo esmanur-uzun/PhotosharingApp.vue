@@ -2,9 +2,6 @@
     <div id="header " class="container-fluid nav-body">
         <ul v-if="_isNotAuthenticated" class="nav justify-content-center">
             <li class="nav-item">
-                <router-link class="nav-link" :to="{name: 'HomePage'}">Home</router-link>
-            </li>
-            <li class="nav-item">
                 <router-link class="nav-link" :to="{name: 'LoginPage'}">Sign in</router-link>
             </li>
             <li class="nav-item">
@@ -13,9 +10,11 @@
         </ul>
         <ul v-if="_isAuthenticated" class="nav nav-pills justify-content-between pt-2 pb-2">
             <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="#">Logo</a>
+                <a class="nav-link " aria-current="page" href="#">Perspective</a>
             </li>
-            <li class="nav-item dropdown ">
+            
+            <li class="nav-item dropdown d-flex">
+                <button class="btn me-3 ms-3"><fa class="plus" icon="fa fa-plus"/></button>
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><fa icon="fa-solid fa-bars"/></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">View Profile</a></li>
@@ -55,7 +54,9 @@ export default {
 .nav-body{
     background-color: #041025;
 }
-.nav-link:hover{
+.nav-link{
+    font-size: 25px !important;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     background: linear-gradient(120deg, #023e7d 20.69%, #7644ff 50.19%, #fd4766 79.69%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -72,6 +73,16 @@ export default {
 }
 .dropdown-toggle::after{
     display: none !important;
+}
+
+.btn{
+    color: aliceblue;
+    padding:10px 15px;
+    border-radius: 10px;
+    background-color: #560bad;
+}
+.plus{
+    color:aliceblue;
 }
 
 </style>
