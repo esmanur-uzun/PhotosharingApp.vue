@@ -2,7 +2,7 @@
     <div class=" body ">
         <form class="container login-container d-flex align-items-center justify-content-center">
             <div class="form-container row m-auto justify-content-center align-items-center col-lg-6">
-                <div class=" row pt-5 pb-5 d-flex justify-content-center col-lg-7">
+                <div class=" row pt-5 pb-5 d-flex justify-content-center col-lg-10 col-md-7">
                     <router-link class="back pb-4"  :to="{name:'HomePage'}">
                         <fa icon="fa-xmark"/>
                     </router-link>

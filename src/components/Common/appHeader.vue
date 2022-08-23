@@ -11,12 +11,12 @@
                 <router-link class="nav-link" :to="{name: 'RegisterPage'}">Sign up</router-link>
             </li>  
         </ul>
-        <ul v-if="_isAuthenticated" class="nav nav-pills justify-content-between">
+        <ul v-if="_isAuthenticated" class="nav nav-pills justify-content-between pt-2 pb-2">
             <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Active</a>
+                <a class="nav-link " aria-current="page" href="#">Logo</a>
             </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><fa icon="fa-solid fa-bars"/></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">View Profile</a></li>
                     <li><a class="dropdown-item" href="#">Setting</a></li>
@@ -66,4 +66,12 @@ export default {
         font-size: 10px !important;
     }
 }
+.dropdown-toggle{
+    color: #fd4766;
+    font-size: 25px !important;
+}
+.dropdown-toggle::after{
+    display: none !important;
+}
+
 </style>

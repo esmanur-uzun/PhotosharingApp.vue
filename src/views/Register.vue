@@ -70,7 +70,7 @@ export default {
 
 <style scoped>
 .login-container{
-    height: 102vh;
+    height: 100% !important;
     background-color: #001233;
 }
 .btn{
