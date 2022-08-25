@@ -21,6 +21,11 @@ const routes = [
         name:"AccountPage",
         path : "/account",
         component : () => import ("@/views/Account.vue")
+    },
+    {
+        name: "NewPhotoPage",
+        path: "/newphoto",
+        component : () => import ("@/views/NewPhoto.vue")
     }
 ]
 
@@ -30,7 +35,7 @@ const router =createRouter({
 })
 
 router.beforeEach((to,_,next) => {
-    const authRequiredRoutes = ["AccountPage"];
+    const authRequiredRoutes = ["AccountPage","NewPhotoPage"];
     const authNotRequiredRoutes = ["LoginPage","RegisterPage","HomePage"];
     const _isAuthenticated = store.getters._isAuthenticated;
 

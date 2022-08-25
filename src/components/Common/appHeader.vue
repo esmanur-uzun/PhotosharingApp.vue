@@ -14,7 +14,7 @@
             </li>
             
             <li class="nav-item dropdown d-flex">
-                <button class="btn me-3 ms-3"><fa class="plus" icon="fa fa-plus"/></button>
+                <button class="btn add-btn" @click="$emit('open-popup')"><fa class="plus" icon="fa fa-plus"/></button>
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><fa icon="fa-solid fa-bars"/></a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">View Profile</a></li>
@@ -75,11 +75,12 @@ export default {
     display: none !important;
 }
 
-.btn{
-    color: aliceblue;
+.add-btn{
     padding:10px 15px;
     border-radius: 10px;
     background-color: #560bad;
+    line-height: 30px;
+   
 }
 .plus{
     color:aliceblue;

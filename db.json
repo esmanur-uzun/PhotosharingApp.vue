@@ -1,16 +1,16 @@
 {
   "newUser": [
     {
-      "name": "esma nur",
+      "name": "Esma Nur",
       "surname": "bitmez",
       "email": "e@hotmail.com",
       "password": "76c6a9cc792a0ccee6d2064d527ccdbed42c9bfc",
       "id": 1
     },
     {
-      "name": "tayyip",
-      "surname": "uzun",
-      "email": "t@gmail.com",
+      "name": "esma nur",
+      "surname": "bitmez",
+      "email": "e@hotmail.com",
       "password": "76c6a9cc792a0ccee6d2064d527ccdbed42c9bfc",
       "id": 2
     }
