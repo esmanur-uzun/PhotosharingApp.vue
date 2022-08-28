@@ -23,19 +23,22 @@ export default {
 
 <style scoped>
 .main-photo{
-    
+    position: relative;
     background-size: cover;
-    height: 93.5vh;
+    height: 92.5vh;
     background-image: url("../medias/mainphoto.jpg");
     background-position: center;
     background-size: cover;
 }
-.opacity{
-    width: 100%;
-    height: 100%;
+.main-photo::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     background-color: #001233;
     opacity: 0.5;
 }
+
 .app-name h1{
     background: linear-gradient(120deg, #1c99fe 20.69%, #7644ff 40.19%, #fd4766 79.69%);
     -webkit-background-clip: text;
