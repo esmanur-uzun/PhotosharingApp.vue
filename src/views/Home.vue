@@ -22,10 +22,13 @@ export default {
 </script>
 
 <style scoped>
+.body{
+    height: 92.5vh;
+}
 .main-photo{
     position: relative;
     background-size: cover;
-    height: 92.5vh;
+    height: 100%;
     background-image: url("../medias/mainphoto.jpg");
     background-position: center;
     background-size: cover;
