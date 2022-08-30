@@ -1,14 +1,14 @@
 <template>
     <div class="d-flex popup  align-items-center justify-content-center ps-3 pe-3">
-        <form class="col-lg-4 col-md-8 popup-inner pe-4 ps-4 pb-5 pt-5">
+        <form @submit.prevent class="col-lg-4 col-md-8 popup-inner pe-4 ps-4 pb-5 pt-5">
             <div class="input-group mb-4 ">
-                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input @change="onFileSelected" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             </div>
             <div class="form-floating ">
-                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" maxlength="25" style="height: 100px"></textarea>
+                <textarea v-model="userData.description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" maxlength="25" style="height: 100px"></textarea>
                 <label for="floatingTextarea2">Description</label>
             </div>
-            <button class="btn load mt-3">Load</button>
+            <button @click="onSave" class="btn load mt-3">Load</button>
             <button @click="$emit('close-popup')" class="btn cancel"><fa icon="fa fa-times"></fa></button>
         </form>
     </div>
@@ -16,7 +16,24 @@
 
 <script>
 export default {
-    
+    data(){
+        return {
+            
+            userData : {
+                file: null,
+                description: null
+            }
+        }
+    },
+    methods:{
+        onSave(){
+            console.log(this.userData)
+        },
+        onFileSelected(event){
+        
+            this.file= event.target.files[0]
+        }
+    }
 }
 </script>
 

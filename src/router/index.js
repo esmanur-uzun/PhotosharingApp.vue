@@ -36,7 +36,7 @@ const router =createRouter({
 
 router.beforeEach((to,_,next) => {
     const authRequiredRoutes = ["AccountPage","NewPhotoPage"];
-    const authNotRequiredRoutes = ["LoginPage","RegisterPage","HomePage"];
+    const authNotRequiredRoutes = ["LoginPage","RegisterPage"];
     const _isAuthenticated = store.getters._isAuthenticated;
 
     if(authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) next(false);
