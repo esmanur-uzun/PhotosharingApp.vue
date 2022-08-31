@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data(){
         return {
@@ -28,11 +29,22 @@ export default {
     methods:{
         onSave(){
             console.log(this.userData)
+            const saveData = {
+                ...this.userData,
+                userid:this._getCurrentUser.id,
+            }
+            this.$appAxios.post("/posts",saveData).then(save_photo_response => {
+                console.log(save_photo_response)
+                Object.keys(this.userData)?.forEach(field => this.userData[field] = null)
+            })
         },
         onFileSelected(event){
         
-            this.file= event.target.files[0]
+            this.userData.file= event.target.files[0]
         }
+    },
+    computed: {
+        ...mapGetters(["_getCurrentUser"])
     }
 }
 </script>

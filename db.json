@@ -15,5 +15,18 @@
       "id": 2
     }
   ],
-  "posts" : []
+  "posts": [
+    {
+      "file": {},
+      "description": "dvdfvdfvd",
+      "userid": 1,
+      "id": 1
+    },
+    {
+      "file": {},
+      "description": "gregregrg",
+      "userid": 1,
+      "id": 2
+    }
+  ]
 }
