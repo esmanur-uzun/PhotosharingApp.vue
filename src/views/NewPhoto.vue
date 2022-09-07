@@ -2,7 +2,7 @@
     <div class="d-flex popup  align-items-center justify-content-center ps-3 pe-3">
         <form @submit.prevent class="col-lg-4 col-md-8 popup-inner pe-4 ps-4 pb-5 pt-5">
             <div class="input-group mb-4 ">
-                <input @change="onFileSelected" ref="file" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <input @change="onFileSelected" accept="image/*" ref="file" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             </div>
             <div class="form-floating ">
                 <textarea v-model="userData.description" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" maxlength="25" style="height: 100px"></textarea>
@@ -28,21 +28,21 @@ export default {
     },
     methods:{
         onSave(){
-            // console.log(this.userData)
-            // const saveData = {
-            //     ...this.userData,
-            //     userid:this._getCurrentUser.id,
-            // }
-            let formData = new FormData()
-            formData.append('file',this.userData.file)
-            this.$appAxios.post("/posts",formData).then(save_photo_response => {
+            console.log(this.userData)
+            const saveData = {
+                ...this.userData,
+                userid:this._getCurrentUser.id,
+            }
+           
+            this.$appAxios.post("/posts",saveData).then(save_photo_response => {
                 console.log(save_photo_response)
-                // Object.keys(this.userData)?.forEach(field => this.userData[field] = null)
+                Object.keys(this.userData)?.forEach(field => this.userData[field] = null)
             })
         },
-        onFileSelected(){
-        
-            this.userData.file= this.refs.file.files[0] //ref'i import etmedim bu dosya içersinde import ettiğmde ise refs çalışmadı 
+        onFileSelected(event){
+            let fileValue = event.target.files[0].name
+            this.userData.file=  fileValue
+            
         }
     },
     computed: {
