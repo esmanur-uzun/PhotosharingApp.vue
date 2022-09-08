@@ -48,7 +48,7 @@ export default {
                 const password = CryptoJS.HmacSHA1(this.userData.password,this.$store.getters._saltKey).toString();
                 this.$appAxios.post("/newUser",{...this.userData, password}).then(registered_user_response =>{
                     console.log("registered_user_response",registered_user_response)
-                    this.$router.push({name: "HomePage"})
+                    this.$router.push({name: "LoginPage"})
                 })
             }
             else {

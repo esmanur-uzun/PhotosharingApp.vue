@@ -1,6 +1,6 @@
 <template>
-    <div class="d-flex popup  align-items-center justify-content-center ps-3 pe-3">
-        <form @submit.prevent class="col-lg-4 col-md-8 popup-inner pe-4 ps-4 pb-5 pt-5">
+    <div  class="d-flex popup  align-items-center justify-content-center ps-3 pe-3">
+        <form  class="col-lg-4 col-md-8 popup-inner pe-4 ps-4 pb-5 pt-5">
             <div class="input-group mb-4 ">
                 <input @change="onFileSelected" accept="image/*" ref="file" type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
             </div>
@@ -9,7 +9,7 @@
                 <label for="floatingTextarea2">Description</label>
             </div>
             <button @click="onSave" class="btn load mt-3">Load</button>
-            <button @click="$emit('close-popup')" class="btn cancel"><fa icon="fa fa-times"></fa></button>
+            <button @click="$emit('close-popup')"  class="btn cancel"><fa icon="fa fa-times"></fa></button>
         </form>
     </div>
 </template>
@@ -23,7 +23,7 @@ export default {
             userData : {
                 file: '',
                 description: null
-            }
+            },
         }
     },
     methods:{
@@ -37,6 +37,7 @@ export default {
             this.$appAxios.post("/posts",saveData).then(save_photo_response => {
                 console.log(save_photo_response)
                 Object.keys(this.userData)?.forEach(field => this.userData[field] = null)
+                
             })
         },
         onFileSelected(event){

@@ -1,20 +1,13 @@
 <template>
     <div  v-if="_isAuthenticated" id="account-container">
         <app-header @open-popup="openPopup"/>
+        
         <div class="d-flex justify-content-center flex-wrap">
-            <div class="col-lg-5 me-3 ms-3 mb-5 mt-4 photo-container d-flex">
+            <div class="col-lg-5 me-3 ms-3 mb-5 mt-4 photo-container d-flex " v-for="item in item" :key="item.id">
                 <img src="../medias/mainphoto.jpg"  class="img-fluid " alt="...">
                 <button class="me-3 mt-3"><fa icon="fa fa-heart"></fa></button>
-                <div class="user pb-5 ps-3">kullanıcı adı</div>
-                <div class="description pb-2 ps-3">açıklama açıklama açıklama</div>
-            </div>
-            <div class="col-lg-5 me-5 ms-3 mb-5 mt-4 photo-container">
-                <img src="../medias/photo1.jpg"  class="img-fluid " alt="...">
-
-            </div>
-            <div class="col-lg-5 me-5 ms-3 mb-5 mt-4 photo-container">
-                <img src="../medias/photo2.jpg"  class="img-fluid " alt="...">
-
+                <div class="user pb-5 ps-3">{{userName}}</div>
+                <div class="description pb-2 ps-3">{{item.description}}</div>
             </div>
         </div>
         
@@ -28,8 +21,17 @@ import appHeader from '../components/Common/appHeader.vue'
 import NewPhoto from './NewPhoto.vue'
 export default {
   components: { appHeader, NewPhoto },
+   data(){
+        return{
+            buttonTriggers:false,
+            item: []
+        }
+    },
     computed:{
-        ...mapGetters(["_isAuthenticated"])
+        ...mapGetters(["_isAuthenticated"]),
+       userName(){
+        return this.item?.newUser?.name ||"-"
+       }
     },
     methods:{
         onLogout(){
@@ -43,10 +45,11 @@ export default {
             this.buttonTriggers = false
         }
     },
-    data(){
-        return{
-            buttonTriggers:false
-        }
+    created(){
+        this.$appAxios.get("/posts").then(photo_lists_resp => {
+            console.log(photo_lists_resp)
+            this.item = photo_lists_resp?.data || []
+        })
     }
 }
 </script>

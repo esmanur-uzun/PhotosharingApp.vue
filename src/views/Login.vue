@@ -18,7 +18,7 @@
                         <button type="submit" @click="enterSystem" class="btn btn-primary">Submit</button>
                         <hr class="mt-4"/>
                     </div>
-                    <p class="text-center">New to Github?
+                    <p class="text-center">New to Perspective?
                         <router-link id="text" :to="{name: 'RegisterPage'}">Create an acount</router-link>
 
                     </p>
@@ -57,7 +57,6 @@ export default {
                 else{
                     alert("böyle bir kullanıcı bulunamadı")
                 }
-                // console.log(login_response);
             }).catch(e => console.log(e))
         }
 
