@@ -46,7 +46,7 @@ export default {
         }
     },
     created(){
-        this.$appAxios.get("/posts").then(photo_lists_resp => {
+        this.$appAxios.get("/posts?_expand=newUser").then(photo_lists_resp => {
             console.log(photo_lists_resp)
             this.item = photo_lists_resp?.data || []
         })

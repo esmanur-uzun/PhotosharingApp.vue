@@ -12,7 +12,9 @@
             <li class="nav-item">
                 <a class="nav-link " aria-current="page" href="#">Perspective</a>
             </li>
-            
+            <li class="nav-item">
+                <router-link class="nav-link" :to="{name: 'AccountPage'}">Account</router-link>
+            </li> 
             <li class="nav-item dropdown d-flex">
                 <button class="btn add-btn" @click="$emit('open-popup')"><fa class="plus" icon="fa fa-plus"/></button>
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><fa icon="fa-solid fa-bars"/></a>
