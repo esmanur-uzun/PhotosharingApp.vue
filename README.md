@@ -24,3 +24,4 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 # PhotoSharingApp.Vue
 # PhotoSharingApp.vuejs
+# PhotoSharingApp.vuejs
