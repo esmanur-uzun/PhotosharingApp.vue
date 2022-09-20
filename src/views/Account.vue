@@ -1,7 +1,6 @@
 <template>
     <div  v-if="_isAuthenticated" id="account-container">
         <app-header @open-popup="openPopup"/>
-        
         <div class="d-flex justify-content-center flex-wrap">
             <div class="col-lg-5 me-3 ms-3 mb-5 mt-4 photo-container d-flex " v-for="item in item" :key="item.id">
                 <img src="../medias/mainphoto.jpg"  class="img-fluid " alt="...">
@@ -27,12 +26,7 @@ export default {
             item: []
         }
     },
-    computed:{
-        ...mapGetters(["_isAuthenticated"]),
-       userName(){
-        return this.item?.newUser?.name ||"-"
-       }
-    },
+   
     methods:{
         onLogout(){
             this.$store.commit("logoutUser")
@@ -46,11 +40,18 @@ export default {
         }
     },
     created(){
-        this.$appAxios.get("/posts?_expand=newUser").then(photo_lists_resp => {
+        this.$appAxios.get("/newUser_posts/?_expand=post&_expand=user").then(photo_lists_resp => {
             console.log(photo_lists_resp)
             this.item = photo_lists_resp?.data || []
         })
-    }
+    },
+    computed:{
+       
+       userName(){
+        return this.item?.newUser?.name ||"-"
+       },
+        ...mapGetters(["_isAuthenticated","_getCurrentUser"])
+    },
 }
 </script>
 

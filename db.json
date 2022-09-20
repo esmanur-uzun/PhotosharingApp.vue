@@ -1,7 +1,7 @@
 {
   "newUser": [
     {
-      "name": "Esma Nur",
+      "name": "esma",
       "surname": "bitmez",
       "email": "e@hotmail.com",
       "password": "76c6a9cc792a0ccee6d2064d527ccdbed42c9bfc",
@@ -10,16 +10,10 @@
   ],
   "posts": [
     {
-      "file": "Bitmap (1).jpg",
-      "description": "deneme 1\n",
-      "userid": 1,
-      "id": 1
-    },
-    {
       "file": "Group 4.jpg",
-      "description": "deneme 2\n",
-      "userid": 1,
-      "id": 2
+      "description": "dcsdvsdvds",
+      "userId": 1,
+      "id": 1
     }
   ]
 }

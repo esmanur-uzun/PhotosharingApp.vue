@@ -15,6 +15,9 @@ export default createStore({
         },
         logoutUser(state){
             state.user = null
+        },
+        setPhotos(state,photoId){
+            state.user.photos= photoId
         }
     },
     getters:{

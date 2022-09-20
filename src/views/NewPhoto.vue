@@ -31,7 +31,7 @@ export default {
             console.log(this.userData)
             const saveData = {
                 ...this.userData,
-                userid:this._getCurrentUser.id,
+                userId:this._getCurrentUser?.id,
             }
            
             this.$appAxios.post("/posts",saveData).then(save_photo_response => {
