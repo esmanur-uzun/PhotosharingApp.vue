@@ -2,31 +2,10 @@
   "newUser": [
     {
       "name": "esma",
-      "surname": "bitmez",
-      "email": "e@hotmail.com",
-      "password": "76c6a9cc792a0ccee6d2064d527ccdbed42c9bfc",
-      "id": 1
-    },
-    {
-      "name": "esma",
-      "surname": "bitmez",
-      "email": "e@hotmail.com",
-      "password": "2acd2d88945a635bbe9ed48d83000c7408a693d8",
-      "id": 2
-    },
-    {
-      "name": "esma",
-      "surname": "bitmez",
-      "email": "e@hotmail.com",
-      "password": "2acd2d88945a635bbe9ed48d83000c7408a693d8",
-      "id": 3
-    },
-    {
-      "name": "esma",
       "surname": "uzun",
-      "email": "u@gmail.com",
+      "email": "e@hotmail.com",
       "password": "86ea8d991517da9ee997c33d1787277a3ad14d41",
-      "id": 4
+      "id": 1
     }
   ],
   "posts": [
