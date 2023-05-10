@@ -9,7 +9,7 @@
                 <div class="description pb-2 ps-3">{{item.description}}</div>
             </div>
         </div>
-        
+
         <new-photo @close-popup="closePopup" v-if="buttonTriggers"></new-photo>
     </div>
 </template>
@@ -40,7 +40,7 @@ export default {
         }
     },
     created(){
-        this.$appAxios.get("/newUser_posts/?_expand=post&_expand=user").then(photo_lists_resp => {
+        this.$appAxios.get("/posts?_expand=user").then(photo_lists_resp => {
             console.log(photo_lists_resp)
             this.item = photo_lists_resp?.data || []
         })
@@ -48,9 +48,9 @@ export default {
     computed:{
        
        userName(){
-        return this.item?.newUser?.name ||"-"
+        return this.item?.user?.name ||"-"
        },
-        ...mapGetters(["_isAuthenticated","_getCurrentUser"])
+        ...mapGetters(["_isAuthenticated"])
     },
 }
 </script>
